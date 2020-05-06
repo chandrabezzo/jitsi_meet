@@ -23,9 +23,7 @@ Find more information about Jitsi Meet [here](https://github.com/jitsi/jitsi-mee
 
 #### Gradle
 Set dependencies of build tools gradle to minimum 3.6.3.
-
 Set distribution gradle wrapper to minimum 5.6.4.
-
 Add Java 1.8 compatibility support to your project by adding the following lines into your build.gradle file:
 
 ```xml

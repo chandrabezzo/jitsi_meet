@@ -21,6 +21,18 @@ Find more information about Jitsi Meet [here](https://github.com/jitsi/jitsi-mee
 <a name="android"></a>
 ### Android
 
+#### Gradle
+Set dependencies of build tools gradle to minimum 3.6.3
+Set distribution gradle wrapper to minimum 5.6.4
+Add Java 1.8 compatibility support to your project by adding the following lines into your build.gradle file:
+
+```xml
+compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+}
+```
+
 #### AndroidManifest.xml
 Jitsi Meet's SDK AndroidManifest.xml will conflict with your project, namely 
 the application:label field. To counter that, go into 

@@ -22,10 +22,24 @@ Find more information about Jitsi Meet [here](https://github.com/jitsi/jitsi-mee
 ### Android
 
 #### Gradle
-Set dependencies of build tools gradle to minimum 3.6.3.
-Set distribution gradle wrapper to minimum 5.6.4.
-Add Java 1.8 compatibility support to your project by adding the following lines into your build.gradle file:
+Set dependencies of build tools gradle to minimum 3.6.3:
+```xml
+dependencies {
+    classpath 'com.android.tools.build:gradle:3.6.3'
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+}
+```
 
+Set distribution gradle wrapper to minimum 5.6.4.
+```xml
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-5.6.4-all.zip
+```
+
+Add Java 1.8 compatibility support to your project by adding the following lines into your build.gradle file:
 ```xml
 compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8

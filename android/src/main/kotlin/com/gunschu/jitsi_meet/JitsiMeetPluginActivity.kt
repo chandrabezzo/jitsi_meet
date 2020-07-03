@@ -26,8 +26,10 @@ class JitsiMeetPluginActivity: JitsiMeetActivity() {
 
     var onStopCalled: Boolean = false;
 
-    override fun onPictureInPictureModeChanged( isInPictureInPictureMode: Boolean, newConfig: Configuration?){
+    override fun onPictureInPictureModeChanged( isInPictureInPictureMode: Boolean, newConfig: Configuration?)
+    {
         super.onPictureInPictureModeChanged(isInPictureInPictureMode, newConfig)
+
         if (isInPictureInPictureMode == false && onStopCalled)
         {
             // Picture-in-Picture mode has been closed, we can (should !) end the call
@@ -35,16 +37,18 @@ class JitsiMeetPluginActivity: JitsiMeetActivity() {
         }
     }
 
-    override fun onStop(){
+    override fun onStop()
+    {
         super.onStop()
         onStopCalled = true;
     }
 
-    override fun onResume(){
+    override fun onResume()
+    {
         super.onResume()
         onStopCalled = false;
     }
-    
+
     override fun onConferenceWillJoin(data: MutableMap<String, Any>?) {
         Log.d(JITSI_PLUGIN_TAG, String.format("JitsiMeetPluginActivity.onConferenceWillJoin: %s", data))
         JitsiMeetEventStreamHandler.instance.onConferenceWillJoin(data)
